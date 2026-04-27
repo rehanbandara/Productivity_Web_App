@@ -1,0 +1,735 @@
+backend
+├───main
+│   ├───java
+│   │   └───com
+│   │       └───smartcampus
+│   │           └───smart_campus_api
+│   │               │   SmartCampusApiApplication.java
+│   │               │
+│   │               ├───config
+│   │               │       JwtFilter.java
+│   │               │       JwtUtil.java
+│   │               │       OAuth2SuccessHandler.java
+│   │               │       SecurityConfig.java
+│   │               │
+│   │               ├───controller
+│   │               │       AuthController.java
+│   │               │       BookingController.java
+│   │               │       NotificationController.java
+│   │               │       NotificationPreferenceController.java
+│   │               │       ResourceController.java
+│   │               │       TicketController.java
+│   │               │       UserController.java
+│   │               │
+│   │               ├───dto
+│   │               │       AdminReviewRequest.java
+│   │               │       AssignTicketDTO.java
+│   │               │       AuthResponse.java
+│   │               │       BookingRequest.java
+│   │               │       BookingResponse.java
+│   │               │       CreateNotificationDTO.java
+│   │               │       CreateTicketDTO.java
+│   │               │       LoginRequest.java
+│   │               │       NotificationPreferenceDTO.java
+│   │               │       NotificationResponseDTO.java
+│   │               │       RegisterRequest.java
+│   │               │       ResourceRequestDTO.java
+│   │               │       ResourceResponseDTO.java
+│   │               │       TicketAttachmentResponseDTO.java
+│   │               │       TicketCommentDTO.java
+│   │               │       TicketCommentResponseDTO.java
+│   │               │       TicketResponseDTO.java
+│   │               │       UpdateTicketStatusDTO.java
+│   │               │       UserResponseDTO.java
+│   │               │
+│   │               ├───exception
+│   │               │       BookingConflictException.java
+│   │               │       GlobalExceptionHandler.java
+│   │               │       ResourceNotFoundException.java
+│   │               │
+│   │               ├───model
+│   │               │       Booking.java
+│   │               │       BookingStatus.java
+│   │               │       IncidentTicket.java
+│   │               │       Notification.java
+│   │               │       NotificationPreference.java
+│   │               │       NotificationType.java
+│   │               │       Resource.java
+│   │               │       ResourceStatus.java
+│   │               │       ResourceType.java
+│   │               │       Role.java
+│   │               │       TicketAttachment.java
+│   │               │       TicketCategory.java
+│   │               │       TicketComment.java
+│   │               │       TicketPriority.java
+│   │               │       TicketStatus.java
+│   │               │       User.java
+│   │               │
+│   │               ├───repository
+│   │               │       BookingRepository.java
+│   │               │       IncidentTicketRepository.java
+│   │               │       NotificationPreferenceRepository.java
+│   │               │       NotificationRepository.java
+│   │               │       ResourceRepository.java
+│   │               │       TicketAttachmentRepository.java
+│   │               │       TicketCommentRepository.java
+│   │               │       UserRepository.java
+│   │               │
+│   │               └───service
+│   │                       AuthService.java
+│   │                       AuthServiceImpl.java
+│   │                       BookingService.java
+│   │                       IncidentTicketService.java
+│   │                       IncidentTicketServiceImpl.java
+│   │                       NotificationPreferenceService.java
+│   │                       NotificationPreferenceServiceImpl.java
+│   │                       NotificationService.java
+│   │                       NotificationServiceImpl.java
+│   │                       ResourceService.java
+│   │                       UserService.java
+│   │                       UserServiceImpl.java
+│   │
+│   └───resources
+│           application.properties
+│
+└───test
+    └───java
+        └───com
+            └───smartcampus
+                └───smart_campus_api
+                        SmartCampusApiApplicationTests.java
+
+
+Frontend
+│   App.css
+│   App.jsx
+│   index.css
+│   main.jsx
+│
+├───api
+│       auth.js
+│       axios.js
+│       bookings.js
+│       notifications.js
+│       resources.js
+│       tickets.js
+│       users.js
+│
+├───assets
+│       campus.jpg
+│       campus_building.jpg
+│       hero.png
+│       lecture_hall.jpg
+│       lecture_theatre.jpg.jpg
+│       react.svg
+│       tech.jpg
+│       vite.svg
+│
+├───components
+│       Footer.jsx
+│       Navbar.jsx
+│       NotificationPanel.jsx
+│       NotificationsPage.jsx
+│       ProfilePage.jsx
+│       ProtectedRoute.jsx
+│       ResourceCard.jsx
+│
+├───context
+│       AuthContext.jsx
+│
+├───pages
+│   ├───admin
+│   │       AdminBookingManager.jsx
+│   │       AdminDashboard.jsx
+│   │       AdminResources.jsx
+│   │       AdminTicketsPage.jsx
+│   │       AdminUsersPage.jsx
+│   │
+│   ├───auth
+│   │       Login.jsx
+│   │       OAuthCallback.jsx
+│   │       Register.jsx
+│   │
+│   ├───technician
+│   │       TechnicianDashboard.jsx
+│   │       TechnicianTicketsPage.jsx
+│   │
+│   └───user
+│           MyTicketsPage.jsx
+│           ResourceCatalogue.jsx
+│           UserBookings.jsx
+│           UserDashboard.jsx
+│
+└───utils
+        theme.js
+
+
+
+
+
+
+
+
+
+
+
+👤 MEMBER 1 – Facility Module
+git checkout -b feature/facility-module
+git add .
+git commit -m "feat: add facility model and repository"
+
+git add .
+git commit -m "feat: implement facility service layer"
+
+git add .
+git commit -m "feat: add facility controller APIs"
+
+git push origin feature/facility-module
+
+
+
+
+
+👤 MEMBER 2 – Booking Module
+git checkout -b feature/booking-module
+
+git add .
+git commit -m "feat: add booking model and status enum"
+
+git add .
+git commit -m "feat: implement booking service"
+
+git add .
+git commit -m "feat: add conflict detection logic"
+
+git add .
+git commit -m "feat: add booking controller endpoints"
+
+git push origin feature/booking-module
+
+
+
+
+👤 MEMBER 3 – Ticket Module
+git checkout -b feature/ticket-module
+git add .
+git commit -m "feat: create ticket model and repository"
+
+git add .
+git commit -m "feat: implement ticket service"
+
+git add .
+git commit -m "feat: add ticket controller"
+
+git add .
+git commit -m "feat: support image upload for tickets"
+git push origin feature/ticket-module
+
+
+
+
+
+👤 MEMBER 4 – Auth + Notification
+git checkout -b feature/auth-notification
+git add .
+git commit -m "feat: implement JWT authentication"
+
+git add .
+git commit -m "feat: add OAuth2 login support"
+
+git add .
+git commit -m "feat: implement notification service"
+
+git add .
+git commit -m "feat: secure APIs with role-based access"
+git push origin feature/auth-notification
+
+
+
+
+Before Merge → TEST LOCALLY (THIS GETS MARKS)
+
+Any member (or team lead) should:
+
+git checkout develop
+git pull origin develop
+
+git checkout -b test/integration
+
+
+
+git merge feature/facility-module
+git merge feature/booking-module
+git merge feature/ticket-module
+git merge feature/auth-notification
+
+
+
+If Everything Works
+git checkout develop
+git merge test/integration
+git push origin develop
+
+
+
+FINAL RELEASE
+git checkout main
+git merge develop
+git push origin main
+
+
+
+🧠 PRO TEAMWORK PRACTICE (FOR EXTRA MARKS)
+Daily Sync (each member runs):
+git checkout develop
+git pull origin develop
+git checkout feature/your-branch
+git merge develop
+
+
+🚨 WHAT LECTURER WANTS TO SEE
+
+If they open your GitHub:
+
+✔ Multiple branches
+✔ Each member commits
+✔ Pull requests
+✔ Merge commits
+✔ Conflict resolution commits
+✔ Clean history
+
+
+🧨 Final Advice (Important)
+
+👉 Don’t fake commits at the end
+👉 Don’t let 1 person push everything
+👉 Don’t merge without testing
+
+
+
+
+git add .
+git commit -m "chore: organize project structure and clean repository"
+
+git commit -m "docs: add README with setup instructions and features"
+
+git commit -m "feat: finalize booking, ticket, and facility modules"
+
+git commit -m "fix: resolve integration issues and improve stability"
+
+
+
+=================================================================================
+# 🎓 Smart Campus Operations Hub (PAF 2026 Group Project)
+
+A full-stack university operations platform to manage **campus resources**, **facility bookings**, **maintenance tickets**, and **role-based access**, with secure authentication and real-time notifications.
+
+---
+
+# 📌 Project Overview
+
+The **Smart Campus Operations Hub** centralizes university operations into one system:
+
+* Students can **browse facilities**, **request bookings**, and **report issues**
+* Admins can **manage resources**, **approve bookings**, and **monitor system activity**
+* Technicians can **handle maintenance tickets and updates**
+
+The system is built using a **React frontend** and a **Spring Boot REST API backend**, secured with **JWT authentication** and optional **OAuth2 login**.
+
+---
+
+# 🧠 Architecture Overview
+
+The system follows a **layered architecture**:
+
+Frontend (React)
+⬇ REST API (Axios)
+Backend (Spring Boot)
+⬇
+Service Layer (Business Logic)
+⬇
+Repository Layer (JPA/Hibernate)
+⬇
+MySQL Database
+
+### Security Layer:
+
+* JWT Authentication
+* Role-Based Access Control (RBAC)
+* OAuth2 Login (Google)
+
+### Key Design Principles:
+
+* Separation of concerns
+* Scalable modular structure
+* Clean REST API design
+
+---
+
+# 🚀 Key Features
+
+## 🏢 Facility Management
+
+* View available rooms, labs, equipment
+* Admin CRUD operations
+* Capacity, type, and availability tracking
+
+## 📅 Booking System
+
+* Request facility bookings
+* Admin approval/rejection workflow
+* Conflict detection (prevents double-booking)
+* Booking status tracking:
+
+  * `PENDING → APPROVED → REJECTED → CANCELLED`
+
+## 🛠 Maintenance Ticketing
+
+* Create incident/support tickets
+* Priority levels (LOW, MEDIUM, HIGH)
+* Technician assignment
+* Ticket lifecycle:
+
+  * `OPEN → IN_PROGRESS → RESOLVED → CLOSED`
+* Optional image attachments
+
+## 🔔 Notifications
+
+* Real-time notification panel
+* Booking updates
+* Ticket status changes
+* User preference settings
+
+## 🔐 Security
+
+* JWT-based authentication
+* Role-based authorization
+* Protected frontend routes
+* Secure backend APIs
+
+---
+
+# 👥 Roles & Access
+
+| Role       | Description       | Access                             |
+| ---------- | ----------------- | ---------------------------------- |
+| USER       | Students / Users  | Book facilities, create tickets    |
+| ADMIN      | University staff  | Manage resources, approve bookings |
+| TECHNICIAN | Maintenance staff | Handle tickets                     |
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+* React + Vite
+* React Router
+* Tailwind CSS
+* Axios
+* react-hot-toast
+
+## Backend
+
+* Java Spring Boot
+* Spring Security (JWT + OAuth2)
+* Spring Data JPA (Hibernate)
+* MySQL
+
+---
+
+# 📂 Repository Structure
+
+## Frontend
+
+```
+src/
+  api/
+  components/
+  context/
+  pages/
+    admin/
+    user/
+    technician/
+    auth/
+  utils/
+  App.jsx
+  main.jsx
+```
+
+## Backend
+
+```
+src/main/java/com/app/
+  config/
+  controller/
+  dto/
+  exception/
+  model/
+  repository/
+  service/
+```
+
+---
+
+# ⚙️ Getting Started
+
+## Prerequisites
+
+* Node.js (LTS)
+* Java 17+
+* Maven
+* MySQL
+
+---
+
+## 🗄 Database Setup
+
+```sql
+CREATE DATABASE smart_campus;
+```
+
+Update `application.properties` with your DB credentials.
+
+---
+
+## 🔧 Backend Setup
+
+```bash
+cd backend
+mvn clean install
+mvn spring-boot:run
+```
+
+Backend runs on:
+
+```
+http://localhost:8080
+```
+
+---
+
+## 💻 Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🔌 API Endpoints (Sample)
+
+## Facilities
+
+```
+GET    /api/v1/facilities
+POST   /api/v1/facilities        (ADMIN)
+PUT    /api/v1/facilities/{id}   (ADMIN)
+DELETE /api/v1/facilities/{id}   (ADMIN)
+```
+
+## Bookings
+
+```
+POST   /api/v1/bookings
+GET    /api/v1/bookings/my
+PUT    /api/v1/bookings/{id}/status   (ADMIN)
+```
+
+## Tickets
+
+```
+POST   /api/v1/tickets
+GET    /api/v1/tickets
+PUT    /api/v1/tickets/{id}/status
+```
+
+## Authentication
+
+```
+POST   /api/v1/auth/login
+GET    /api/v1/user/me
+```
+
+---
+
+# 🎬 Demo Flow
+
+1. User logs in (JWT / OAuth)
+2. User browses facilities
+3. User creates a booking request
+4. Admin approves/rejects booking
+5. User creates maintenance ticket
+6. Technician updates ticket status
+7. Notifications are triggered
+
+---
+
+# 🔐 Authentication & Security
+
+* JWT stored in frontend (localStorage)
+* Axios interceptor attaches:
+
+```
+Authorization: Bearer <token>
+```
+
+* Backend validates token and roles:
+
+```
+ROLE_USER
+ROLE_ADMIN
+ROLE_TECHNICIAN
+```
+
+---
+
+# 🧪 Testing
+
+* API testing using Postman
+* Manual integration testing
+* Validation & error handling implemented
+
+### Future Improvements:
+
+* Unit testing (JUnit)
+* Integration testing (Spring Boot Test)
+
+---
+
+# ⚙️ CI/CD (GitHub Actions)
+
+Basic CI pipeline:
+
+* Builds backend using Maven
+* Installs frontend dependencies
+* Ensures successful compilation
+
+---
+
+# 📸 Screenshots
+
+(Add screenshots here)
+
+* Login Page
+* Dashboard
+* Booking System
+* Ticket System
+* Notifications Panel
+
+---
+
+# 🧩 System Modules by Member
+
+### Member 1 – Facilities
+
+* Resource management (CRUD)
+* Search and filtering
+
+### Member 2 – Booking
+
+* Booking workflow
+* Conflict handling
+* Admin approval system
+
+### Member 3 – Ticketing
+
+* Issue reporting
+* Status tracking
+* Technician assignment
+
+### Member 4 – Auth & Notifications
+
+* JWT + OAuth2 login
+* Role-based security
+* Notification system
+
+---
+
+# ⚠️ Troubleshooting
+
+### Admin access issue
+
+* Ensure role is set in database
+* Re-login to refresh JWT
+
+### App not loading
+
+* Check console errors
+* Ensure backend is running
+
+---
+
+# 📈 Future Enhancements
+
+* Real-time notifications (WebSocket)
+* File/image cloud storage
+* Advanced analytics dashboard
+* Mobile app version
+
+---
+
+# 📜 License
+
+Academic project for PAF 2026.
+
+=============================================================
+
+
+main        → stable code (final demo)
+develop     → integration branch
+feature/*   → each member’s work
+
+
+feature/facility-module
+feature/booking-system
+feature/ticket-system
+feature/auth-notifications
+
+
+feat: add facility CRUD endpoints
+fix: resolve booking conflict logic bug
+docs: update API documentation
+refactor: improve user service structure
+
+
+
+feat → new feature
+fix → bug fix
+docs → documentation
+refactor → code improvement
+test → testing
+chore → setup/config
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Admin@gmail.com
+tech@gmail.com
+
+
+
+
+
+
+
+
